@@ -4,9 +4,7 @@
 
 # oe
 
-`oe` is the command line for [Opportunity Encoder](https://opportunity-encoder-production.up.railway.app). It lets you, a script, or your coding agent read and change your Workflows, Modules, Visualizations and Blueprints from a terminal. It acts as you, and never beyond what you can reach in OE.
-
-Every command comes from the API description OE serves, so `oe --help` always matches the OE you are signed in to.
+`oe` is the command line for [Opportunity Encoder](https://opportunity-encoder-production.up.railway.app). Read and change your Workflows, Modules, Visualizations and Blueprints from a terminal, yourself or through your coding agent. It acts as you, and can reach only what you can.
 
 ## Install
 
@@ -14,7 +12,7 @@ Every command comes from the API description OE serves, so `oe --help` always ma
 brew install eidra-umain/oe/oe
 ```
 
-This works on macOS and Linux. On Windows, or without Homebrew, download the archive for your machine from the [latest release](https://github.com/eidra-umain/homebrew-oe/releases/latest) and put `oe` on your `PATH`.
+Works on macOS and Linux. Otherwise, download `oe` from the [latest release](https://github.com/eidra-umain/homebrew-oe/releases/latest) and put it on your `PATH`.
 
 ## Sign in
 
@@ -22,42 +20,35 @@ This works on macOS and Linux. On Windows, or without Homebrew, download the arc
 oe login
 ```
 
-This opens OE in your browser and asks you to approve the sign-in. If you are not signed in to OE in that browser, it asks you to sign in first, then brings you back to approve. You need an OE account.
+Your browser opens OE: sign in if asked, then approve. You need an OE account.
 
-Once approved, `oe` has a sign-in of its own: signing out of OE in the browser does not sign it out, and `oe logout` does not sign the browser out. It renews itself while you use it, for up to 90 days, then asks you to run `oe login` again. You can see and revoke every sign-in in OE, under **Settings → Personal Access Tokens**; revoking one stops that `oe` at once.
-
-On a machine that cannot open a browser, such as a CI runner, make a Personal Access Token in Settings and hand it over instead:
-
-```bash
-export OE_TOKEN=oe_pat_…
-```
+- `oe` stays signed in on its own, apart from your browser, and renews itself for up to 90 days.
+- See or revoke its sign-in in OE, under **Settings → Personal Access Tokens**.
+- No browser, such as on a CI runner? Make a Personal Access Token there and set `OE_TOKEN=oe_pat_…` instead.
 
 ## Use
 
 ```bash
-oe --help                                   # every command
-oe list-workflows -o json                   # your Workflows, as JSON
-oe read-workflow-visualization <id> > viz.html
+oe --help                    # every command
+oe list-workflows -o json    # your Workflows
 ```
 
-A 4xx answer exits with status 4, and a 5xx with status 5; the JSON body is on stdout.
-
-| Setting           | What it does                                                    |
-| ----------------- | --------------------------------------------------------------- |
-| `OE_TOKEN`        | A Personal Access Token to use instead of signing in            |
-| `OE_URL`          | Another OE to talk to, such as a local development server       |
-| `OE_MACHINE_NAME` | What this machine is called when it signs in; its host name if unset |
+| Setting           | What it does                                        |
+| ----------------- | --------------------------------------------------- |
+| `OE_TOKEN`        | Use a Personal Access Token instead of signing in   |
+| `OE_URL`          | Talk to another OE, such as a local server          |
+| `OE_MACHINE_NAME` | Name this machine's sign-in; its host name if unset |
 
 ## Update and remove
 
 ```bash
-brew upgrade oe      # the latest oe
-oe logout            # end this machine's sign-in
+brew upgrade oe
+oe logout          # end this machine's sign-in
 brew uninstall oe
 ```
 
-## About this repository
+---
 
-This is a [Homebrew tap](https://docs.brew.sh/Taps). OE's release pipeline publishes each new `oe` here, as a release and as `Formula/oe.rb`, once it has passed OE's tests. Please don't edit the formula by hand; the next release replaces it.
+This is a [Homebrew tap](https://docs.brew.sh/Taps). OE's release pipeline publishes each tested `oe` here; please don't edit `Formula/oe.rb` by hand.
 
 Copyright © 2026 Dawid Dahl and Prabhat Ramesh. All rights reserved.
