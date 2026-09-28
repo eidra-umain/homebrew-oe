@@ -5,20 +5,20 @@
 class Oe < Formula
   desc "The Opportunity Encoder command line"
   homepage "https://opportunity-encoder-production.up.railway.app"
-  version "0.1.526"
+  version "0.1.528"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/eidra-umain/homebrew-oe/releases/download/cli-v0.1.526/oe_0.1.526_darwin_amd64.tar.gz"
-      sha256 "9be763bb16e31596c800b472b6e37562c321109fee24f43a65909d1983a6f35a"
+      url "https://github.com/eidra-umain/homebrew-oe/releases/download/cli-v0.1.528/oe_darwin_amd64.tar.gz"
+      sha256 "3dc2cfccc5648c3408136ebe8d989bce4a1910f7c10810ed0ce57c039df4488a"
 
       define_method(:install) do
         bin.install "oe"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/eidra-umain/homebrew-oe/releases/download/cli-v0.1.526/oe_0.1.526_darwin_arm64.tar.gz"
-      sha256 "c98488a31bf16b5c07a6000a6bc1297eb6965c8d221ab63412d8eed8f10559bc"
+      url "https://github.com/eidra-umain/homebrew-oe/releases/download/cli-v0.1.528/oe_darwin_arm64.tar.gz"
+      sha256 "5d60ec54dae57773b2c3139bcc24ddd30c8ccddad1a1339955ec6e9707d6eb94"
 
       define_method(:install) do
         bin.install "oe"
@@ -28,15 +28,15 @@ class Oe < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/eidra-umain/homebrew-oe/releases/download/cli-v0.1.526/oe_0.1.526_linux_amd64.tar.gz"
-      sha256 "4c5d91ff11870d483d1870b8d1c4fafe81d2104a57504641863f2d1d802bd257"
+      url "https://github.com/eidra-umain/homebrew-oe/releases/download/cli-v0.1.528/oe_linux_amd64.tar.gz"
+      sha256 "38f4740e550d43c7553300889a78200b04b4d4f01071801199ff86255d2aeaec"
       define_method(:install) do
         bin.install "oe"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/eidra-umain/homebrew-oe/releases/download/cli-v0.1.526/oe_0.1.526_linux_arm64.tar.gz"
-      sha256 "bb2a198247c276661ef7158888891bb93c200ce8abcf5446d3c0f0736747f64e"
+      url "https://github.com/eidra-umain/homebrew-oe/releases/download/cli-v0.1.528/oe_linux_arm64.tar.gz"
+      sha256 "b8a6d6c4234179c98bd5dac09ac263585d673da63e6085cf49d825aab6df3e1e"
       define_method(:install) do
         bin.install "oe"
       end
