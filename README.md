@@ -22,7 +22,9 @@ This works on macOS and Linux. On Windows, or without Homebrew, download the arc
 oe login
 ```
 
-This opens OE in your browser and asks you to approve the sign-in. After that, `oe` renews itself while you use it, for up to 90 days. You can see and revoke every sign-in in OE, under **Settings → Personal Access Tokens**.
+This opens OE in your browser and asks you to approve the sign-in. If you are not signed in to OE in that browser, it asks you to sign in first, then brings you back to approve. You need an OE account.
+
+Once approved, `oe` has a sign-in of its own: signing out of OE in the browser does not sign it out, and `oe logout` does not sign the browser out. It renews itself while you use it, for up to 90 days, then asks you to run `oe login` again. You can see and revoke every sign-in in OE, under **Settings → Personal Access Tokens**; revoking one stops that `oe` at once.
 
 On a machine that cannot open a browser, such as a CI runner, make a Personal Access Token in Settings and hand it over instead:
 
