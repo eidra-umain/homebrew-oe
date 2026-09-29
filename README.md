@@ -39,6 +39,8 @@ oe list-workflows -o json    # your Workflows
 | `OE_URL`          | Talk to another OE, such as a local server          |
 | `OE_MACHINE_NAME` | Name this machine's sign-in; its host name if unset |
 
+Working through a coding agent? Have it run `oe get-agent-guide` first. It needs no sign-in, and tells the agent how OE works, how to sign `oe` in, and how to read, save and handle a refusal.
+
 ## Update and remove
 
 ```bash
