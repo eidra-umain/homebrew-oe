@@ -42,10 +42,12 @@ oe list-workflows -o json    # your Workflows
 ## Update and remove
 
 ```bash
-brew upgrade oe
+brew update && brew upgrade oe
 oe logout          # end this machine's sign-in
 brew uninstall oe
 ```
+
+`brew update` comes first because Homebrew refreshes a tap on its own at most once a day, and `oe` can be released several times a day.
 
 ---
 
