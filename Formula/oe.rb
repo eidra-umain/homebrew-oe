@@ -5,20 +5,20 @@
 class Oe < Formula
   desc "The Opportunity Encoder command line"
   homepage "https://opportunity-encoder-production.up.railway.app"
-  version "0.1.530"
+  version "0.1.531"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/eidra-umain/homebrew-oe/releases/download/cli-v0.1.530/oe_darwin_amd64.tar.gz"
-      sha256 "c621d09966732d61e520236ba3465fdc23899db0da7ea5442d06d4ec064521af"
+      url "https://github.com/eidra-umain/homebrew-oe/releases/download/cli-v0.1.531/oe_darwin_amd64.tar.gz"
+      sha256 "4ebd954ccb8f6cef9d34e7b47d924efc816fa1e5993d775b30abda9717feb485"
 
       define_method(:install) do
         bin.install "oe"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/eidra-umain/homebrew-oe/releases/download/cli-v0.1.530/oe_darwin_arm64.tar.gz"
-      sha256 "f51beb18326b6526a66fc72b8145eb4472cb8086c161bb28d52d197225dc10fb"
+      url "https://github.com/eidra-umain/homebrew-oe/releases/download/cli-v0.1.531/oe_darwin_arm64.tar.gz"
+      sha256 "aa38639be79ba1b53ebbde72a294f3c4fff4f3c8be32895f3c0e3495ff06f008"
 
       define_method(:install) do
         bin.install "oe"
@@ -28,15 +28,15 @@ class Oe < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/eidra-umain/homebrew-oe/releases/download/cli-v0.1.530/oe_linux_amd64.tar.gz"
-      sha256 "beb0ddcf56fb74e10460ddef76e9a50e4264ad3ece5107ad647284a3c30cf141"
+      url "https://github.com/eidra-umain/homebrew-oe/releases/download/cli-v0.1.531/oe_linux_amd64.tar.gz"
+      sha256 "e6aac0844ffe77e5d32c053a132f15473bacddd069b606552eedbb8db685de5a"
       define_method(:install) do
         bin.install "oe"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/eidra-umain/homebrew-oe/releases/download/cli-v0.1.530/oe_linux_arm64.tar.gz"
-      sha256 "7082402ce85340cd85b46e4bff29b3b5dd0c007e72fec9643e9db5e366e32ed8"
+      url "https://github.com/eidra-umain/homebrew-oe/releases/download/cli-v0.1.531/oe_linux_arm64.tar.gz"
+      sha256 "0bfbd5319c778e497c04a325a4d64e34dd979310d9308f0110bb05e7c93f79d8"
       define_method(:install) do
         bin.install "oe"
       end
