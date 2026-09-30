@@ -44,12 +44,12 @@ Working through a coding agent? Have it run `oe get-agent-guide` first. It needs
 ## Update and remove
 
 ```bash
-brew update && brew upgrade oe
+oe update          # upgrade oe to the latest release
 oe logout          # end this machine's sign-in
 brew uninstall oe
 ```
 
-`brew update` comes first because Homebrew refreshes a tap on its own at most once a day, and `oe` can be released several times a day.
+`oe update` runs `brew update` and then `brew upgrade oe`. The first matters because Homebrew refreshes a tap on its own at most once a day, and `oe` can be released several times a day. An `oe` that Homebrew did not install is left alone, and `oe update` says where to download the latest. An `oe` older than 0.1.536 has no `oe update`; run `brew update && brew upgrade oe` once.
 
 ---
 
